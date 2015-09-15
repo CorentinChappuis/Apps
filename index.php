@@ -8,10 +8,18 @@ require('formulaire_div.html');
 require('function.php');
 if (isset($_POST['dividend']) && isset($_POST['diviseur']))
 	{
-		if (is_numeric($_POST['dividend']) && is_numeric($_POST['diviseur']) && $_POST['diviseur'] != 0)
+		if (is_numeric($_POST['dividend']) && is_numeric($_POST['diviseur']) && $_POST['diviseur'] != 0 && $_POST['dividend'] != 0)
 			{
 				if ((int)$_POST['dividend'] == (float)$_POST['dividend'] && (int)$_POST['diviseur'] == (float)$_POST['diviseur'])
 					{
+						if ($_POST['dividend'] < 0)
+							{
+								$_POST['dividend'] = -$_POST['dividend'];
+							}
+						if ($_POST['diviseur'] < 0)
+							{
+								$_POST['diviseur'] = -$_POST['diviseur'];
+							}
 						if ($_POST['dividend'] < $_POST['diviseur'])
 							{
 								$dividend = $_POST['diviseur'];
