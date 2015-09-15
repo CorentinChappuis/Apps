@@ -1,39 +1,21 @@
-
-1
 <?php
-2
 function divisionE($dividend, $diviseur)
-3
-    {
-4
-        global $Erreur;
-5
-        while (reste != 0)
-6
-            {
-7
-                $quotient = dividend / diviseur;
-8
-                $enlever = quotient = diviseur;
-9
-                $reste = dividend - enlever;
-10
-                if ($reste == 0)
-11
-                    {
-12
-                        return $reste;
-13
-                    }
-14
-                else
-15
-                    {
-16
-                        $dividend = $diviseur;
-17
-                        $diviseur = $reste;
-18
-                    }
-19
-            }
+	{
+		$reste = 4;
+		while ($reste != 0)
+			{
+				$quotient = floor($dividend / $diviseur);
+				$enlever = $quotient * $diviseur;
+				$reste = $dividend % $enlever;
+				if ($reste == 0)
+					{
+						return $diviseur;
+					}
+				else
+					{
+						$dividend = $diviseur;
+						$diviseur = $reste;
+					}
+			}
+		return $dividend;
+	}

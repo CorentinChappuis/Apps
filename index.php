@@ -1,31 +1,45 @@
-
-1
-<?php 
-2
-require('formulaire_div.html')
-3
+<?php
+global $Erreur;
+$Erreur = 0;
+global $dividend;
+global $diviseur;
+global $pgdc;
+require('formulaire_div.html');
 require('function.php');
-4
 if (isset($_POST['dividend']) && isset($_POST['diviseur']))
-5
-    {
-6
-        if (is_int($_POST['dividend']) && is_int($_POST['diviseur']) && $_POST['diviseur'] != 0)
-7
-            {
-8
-                $pgdc = divisionE($_POST['dividend'], $_POST['diviseur']);
-9
-                echo '<p>Le pgdc de ' . $dividend . 'et de ' . $diviseur. ' est de ' . $pgdc . '</p>';
-10
-            }
-11
-    }
-12
-else
-13
-    {
-14
-        echo '<p>Erreur, contacter admin@kropta.ovh pour un renseignement</p>';
-15
-    }
+	{
+		if (is_numeric($_POST['dividend']) && is_numeric($_POST['diviseur']) && $_POST['diviseur'] != 0)
+			{
+				if ((int)$_POST['dividend'] == (float)$_POST['dividend'] && (int)$_POST['diviseur'] == (float)$_POST['diviseur'])
+					{
+						if ($_POST['dividend'] < $_POST['diviseur'])
+							{
+								$dividend = $_POST['diviseur'];
+								$diviseur = $_POST['dividend'];
+							}
+						else
+							{
+								$dividend = $_POST['dividend'];
+								$diviseur = $_POST['diviseur'];
+							}
+						$pgdc = divisionE($dividend, $diviseur);
+						echo '<p>Le pgdc de ' . $dividend . ' et de ' . $diviseur . ' est de <strong>' . $pgdc . '</strong></p>';	
+					}
+				else
+					{
+						echo '<p class="erreur">Veuillez utiliser des nombres entiers!</p>';
+					}	 
+			}
+		elseif ($_POST['diviseur'] == 0)
+			{
+				echo '<p class="erreur">Veuillez ne pas utiliser 0 comme deuxième nombre!</p>';
+			}
+		else
+			{
+				echo '<p class="erreur">Veuillez utiliser des nombres entiers!</p>';
+			}
+	}
+if (isset($pgdc) && $Erreur != 0)
+	{
+		echo '<p>Une erreur ? -> contactez admin@kropta.ovh</p>';
+	}
