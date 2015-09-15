@@ -38,9 +38,9 @@ if (isset($_POST['dividend']) && isset($_POST['diviseur']))
 						echo '<p class="erreur">Veuillez utiliser des nombres entiers!</p>';
 					}	 
 			}
-		elseif ($_POST['diviseur'] == 0)
+		elseif ($_POST['diviseur'] == 0 OR $_POST['dividend'] == 0)
 			{
-				echo '<p class="erreur">Veuillez ne pas utiliser 0 comme deuxième nombre!</p>';
+				echo '<p class="erreur">Veuillez ne pas utiliser 0!</p>';
 			}
 		else
 			{

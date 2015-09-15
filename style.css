@@ -1,0 +1,23 @@
+h1, h2
+{
+	text-align: center;
+}
+h1
+{
+	border: 5px outset;
+}
+form
+{
+	border: solid 2px;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 10px;
+	
+}
+p.erreur
+{
+	color: red;
+	text-align: center;
+	font-weight: bold;
+	font-size: 2em;
+}
