@@ -10,10 +10,10 @@
 		<h2>Vous pouvez calculer le pgdc de 2 nombre sur cette page web.</h2>
 		<form method="post" action="index.php" >
 			<label for="dividend">Nombre 1 : </label>
-			<input type="number" name="dividend" required autofocus/>
+			<input type="number" name="dividend" min="-999999999" max="999999999" required autofocus/>
 			<br />
 			<label for="diviseur">Nombre 2 : </label>
-			<input type="number" name="diviseur" required />
+			<input type="number" name="diviseur" min="-999999999" max="999999999" required />
 			<br />
 			<input type="submit" value="Calculer" />
 		</form>
