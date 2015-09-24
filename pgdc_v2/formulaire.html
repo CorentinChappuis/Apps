@@ -1,0 +1,27 @@
+<html>
+	<!-- Auteur : arnaud5 -->
+	<head>
+		<title>calcul pgdc (2 à 4)</title>
+		<meta charset="utf8" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h1>Ceci vous permet de calculer le pgdc de 2 à 4 entiers.</h1>
+		<form method="post" action="index.php" >
+			<legend>n°1 et n°2 seulement sont obligatoires.</legend>
+			<label for="nb1" >Nombre n°1 : </label>
+			<input type="number" name="nb1" min="-999999999" max="999999999" required autofocus />
+			<br />
+			<label for="nb2" >Nombre n°2 : </label>
+			<input type="number" name="nb2" min="-999999999" max="999999999" required />
+			<br />
+			<label for="nb3" >Nombre n°3 : </label>
+			<input type="number" name="nb3" min="-999999999" max="999999999" />
+			<br />
+			<label for="nb4" >Nombre n°4 : </label>
+			<input type="number" name="nb4" min="-999999999" max="999999999" />
+			<br />
+			<input type="submit" value="Calculer" />
+		</form>
+	</body>
+</html>
